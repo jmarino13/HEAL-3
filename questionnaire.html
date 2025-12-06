@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HEAL Wellness | Patient Questionnaire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-wrap">
+        <img src="images/heal-logo.png" class="logo-img" alt="HEAL Wellness logo" />
+        <span class="logo-text">HEAL Wellness</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#membership">Memberships</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1 class="section-title">Patient Questionnaire</h1>
+      <p class="section-intro">
+        Please complete this secure form so our team can determine the best HEAL protocol for you.
+      </p>
+
+      <form id="questionnaire-form" class="card" method="POST" action="/questionnaire">
+        <!-- Contact info -->
+        <h2>Contact information</h2>
+        <div class="grid two">
+          <div>
+            <label>First name</label>
+            <input type="text" name="first_name" required />
+          </div>
+          <div>
+            <label>Last name</label>
+            <input type="text" name="last_name" required />
+          </div>
+          <div>
+            <label>Email</label>
+            <input type="email" name="email" required />
+          </div>
+          <div>
+            <label>Mobile phone</label>
+            <input type="tel" name="phone" required />
+          </div>
+          <div>
+            <label>Date of birth</label>
+            <input type="date" name="dob" required />
+          </div>
+          <div>
+            <label>State of residence</label>
+            <input type="text" name="state" required />
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Goals -->
+        <h2>Your goals</h2>
+        <p>What are your primary reasons for working with HEAL? (Check all that apply.)</p>
+        <div class="grid two">
+          <label><input type="checkbox" name="goals" value="weight_loss" /> Medical weight loss</label>
+          <label><input type="checkbox" name="goals" value="energy_focus" /> Energy & focus</label>
+          <label><input type="checkbox" name="goals" value="hormone_optimization" /> Hormone optimization</label>
+          <label><input type="checkbox" name="goals" value="skin_estriol" /> Skin / estriol-based topical creams</label>
+          <label><input type="checkbox" name="goals" value="recovery_performance" /> Recovery & performance</label>
+          <label><input type="checkbox" name="goals" value="longevity" /> Longevity & healthy aging</label>
+        </div>
+
+        <label>Describe your top 2–3 goals in your own words</label>
+        <textarea name="goal_notes" rows="4"></textarea>
+
+        <hr />
+
+        <!-- Medical history -->
+        <h2>Medical history</h2>
+        <label>Current diagnoses or chronic conditions</label>
+        <textarea name="conditions" rows="3" placeholder="Example: hypertension, prediabetes, PCOS, thyroid disorder, etc."></textarea>
+
+        <label>Current medications & supplements (include doses if possible)</label>
+        <textarea name="medications" rows="3"></textarea>
+
+        <label>Past surgeries or hospitalizations</label>
+        <textarea name="surgeries" rows="3"></textarea>
+
+        <div class="grid two">
+          <div>
+            <label>Do you have any medication allergies?</label>
+            <select name="allergies_flag" required>
+              <option value="">Select one</option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+          <div>
+            <label>If yes, please list</label>
+            <input type="text" name="allergies" />
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Weight & lifestyle -->
+        <h2>Weight & lifestyle</h2>
+        <div class="grid two">
+          <div>
+            <label>Current weight (lbs)</label>
+            <input type="number" name="weight" />
+          </div>
+          <div>
+            <label>Height</label>
+            <input type="text" name="height" placeholder="e.g. 5'7&quot;" />
+          </div>
+          <div>
+            <label>Have you used GLP-1 medications before?</label>
+            <select name="prior_glp1">
+              <option value="">Select one</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label>Have you used peptides or hormone therapy before?</label>
+            <select name="prior_peptides">
+              <option value="">Select one</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+
+        <label>Anything else your provider should know before your consult?</label>
+        <textarea name="notes" rows="4"></textarea>
+
+        <p class="small-print">
+          By submitting this form, you agree that HEAL Wellness may contact you via phone, SMS, or email. 
+          This form is not a substitute for emergency care. If you are experiencing a medical emergency, call 911.
+        </p>
+
+        <button type="submit" class="btn btn-primary full">Submit Questionnaire</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-meta">
+        &copy; <span id="year"></span> HEAL Wellness.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

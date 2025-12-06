@@ -1,457 +1,349 @@
-:root {
-  --brand: #a24c24;
-  --brand-dark: #7e381b;
-  --brand-light: #efe6db;
-  --bg: #f8f4f0;
-  --text: #1b120e;
-  --card-bg: #ffffff;
-  --border-subtle: #e0d4c8;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: var(--text);
-  background: var(--bg);
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.container {
-  width: min(1120px, 92vw);
-  margin: 0 auto;
-}
-
-.top-banner {
-  background: var(--brand);
-  color: var(--brand-light);
-  text-align: center;
-  padding: 0.6rem 1rem;
-  font-size: 0.9rem;
-}
-.top-banner a {
-  margin-left: 0.5rem;
-  text-decoration: underline;
-}
-
-/* Header */
-.site-header {
-  background: #ffffff;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.8rem 0;
-}
-
-.logo-wrap {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.logo-img {
-  height: 40px;
-  width: 40px;
-  object-fit: cover;
-}
-
-.logo-text {
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  font-size: 0.9rem;
-}
-
-.nav a {
-  opacity: 0.8;
-}
-
-.nav a:hover {
-  opacity: 1;
-}
-
-.nav-cta {
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid var(--brand);
-  color: var(--brand);
-}
-
-/* Hero */
-.hero {
-  background: linear-gradient(135deg, var(--brand) 0%, #c47441 40%, #f6eee6 100%);
-  color: var(--brand-light);
-  padding: 4.5rem 0 3.5rem;
-}
-
-.hero-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: 3rem;
-  align-items: center;
-}
-
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.75rem;
-  opacity: 0.9;
-  margin-bottom: 0.5rem;
-}
-
-.hero h1 {
-  font-size: clamp(2.2rem, 3vw, 2.9rem);
-  line-height: 1.1;
-  margin: 0 0 0.9rem;
-}
-
-.hero-sub {
-  font-size: 1rem;
-  max-width: 520px;
-  line-height: 1.5;
-  margin-bottom: 1.4rem;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-bottom: 0.7rem;
-}
-
-.small-print {
-  font-size: 0.8rem;
-  opacity: 0.9;
-}
-
-.hero-panel {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.hero-card {
-  background: rgba(255, 255, 255, 0.14);
-  border-radius: 1.2rem;
-  padding: 1.5rem;
-  backdrop-filter: blur(8px);
-}
-
-.hero-card h2 {
-  margin-top: 0;
-  font-size: 1.1rem;
-}
-
-.hero-card ul {
-  padding-left: 1.2rem;
-  margin: 0 0 0.8rem;
-  font-size: 0.9rem;
-}
-
-.hero-note {
-  font-size: 0.85rem;
-  opacity: 0.9;
-}
-
-/* Generic sections */
-.section {
-  padding: 3.5rem 0;
-}
-
-.section-alt {
-  background: #f2ebe3;
-}
-
-.section-title {
-  font-size: 1.8rem;
-  margin: 0 0 0.3rem;
-}
-
-.section-intro {
-  margin: 0 0 2rem;
-  max-width: 640px;
-}
-
-/* Grid */
-.grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.grid.three {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.grid.two {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
-/* Cards */
-.card {
-  background: var(--card-bg);
-  border-radius: 1rem;
-  padding: 1.3rem 1.3rem 1.4rem;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.03);
-}
-
-/* Buttons */
-.btn {
-  border-radius: 999px;
-  border: none;
-  padding: 0.7rem 1.4rem;
-  font-size: 0.95rem;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.2rem;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background: #ffffff;
-  color: var(--brand);
-  font-weight: 600;
-}
-
-.btn-outline {
-  border: 1px solid var(--brand-light);
-  color: var(--brand-light);
-  background: transparent;
-}
-
-.btn-primary-ghost {
-  background: transparent;
-  border: 1px solid var(--brand);
-  color: var(--brand);
-}
-
-.btn-light {
-  background: var(--brand-light);
-  color: var(--brand-dark);
-  font-weight: 600;
-}
-
-.btn.full {
-  width: 100%;
-}
-
-/* Step cards */
-.step-card {
-  position: relative;
-  padding-top: 2rem;
-}
-
-.step-badge {
-  position: absolute;
-  top: 1rem;
-  left: 1.3rem;
-  background: var(--brand);
-  color: var(--brand-light);
-  border-radius: 999px;
-  width: 26px;
-  height: 26px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-}
-
-/* Lists */
-.bullet-list {
-  padding-left: 1rem;
-  margin: 0.5rem 0 0;
-  font-size: 0.9rem;
-}
-
-.bullet-list li {
-  margin-bottom: 0.2rem;
-}
-
-/* Membership cards */
-.membership-grid {
-  margin-top: 2rem;
-}
-
-.membership-card {
-  position: relative;
-}
-
-.membership-card .badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: var(--brand);
-  color: var(--brand-light);
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-}
-
-.price {
-  font-size: 1.6rem;
-  margin: 0.4rem 0 0.1rem;
-}
-.price span {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  margin-left: 0.2rem;
-}
-
-.subtext {
-  font-size: 0.9rem;
-  margin-bottom: 0.8rem;
-}
-
-.checklist {
-  list-style: none;
-  padding-left: 0;
-  font-size: 0.9rem;
-  margin: 0 0 1rem;
-}
-.checklist li::before {
-  content: "✓";
-  margin-right: 0.4rem;
-  color: var(--brand);
-}
-
-.membership-note {
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-}
-
-/* Team */
-.team-grid .card {
-  min-height: 0;
-}
-.title-small {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-}
-
-/* Consult CTA */
-.consult-section {
-  background: var(--brand);
-  color: var(--brand-light);
-}
-
-.consult-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-}
-
-/* FAQ */
-.faq details {
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 0.8rem 0;
-}
-.faq summary {
-  cursor: pointer;
-  font-weight: 500;
-}
-.faq p {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-}
-
-/* Footer */
-.site-footer {
-  background: #1b120e;
-  color: #f4ece3;
-  padding: 2.3rem 0 1.3rem;
-}
-
-.footer-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
-  gap: 1.5rem;
-  align-items: flex-start;
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.logo-img-small {
-  width: 32px;
-  height: 32px;
-  object-fit: cover;
-}
-
-.footer-text {
-  font-size: 0.9rem;
-  margin-top: 0.6rem;
-}
-
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  font-size: 0.9rem;
-}
-
-.footer-links a {
-  text-decoration: underline;
-}
-
-.footer-meta {
-  grid-column: 1 / -1;
-  font-size: 0.8rem;
-  opacity: 0.8;
-  margin-top: 0.5rem;
-}
-
-/* Small screens */
-@media (max-width: 768px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-  }
-  .hero-panel {
-    justify-content: flex-start;
-  }
-  .nav {
-    display: none; /* for a real build you can add a mobile menu */
-  }
-  .consult-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .footer-inner {
-    grid-template-columns: 1fr;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HEAL Wellness | Concierge Peptide & Hormone Care</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="HEAL Wellness offers concierge peptide and hormone optimization, medical weight loss, and prescription topical creams delivered to your door with virtual care from Dr. Gunjan Raina, MD and Jude Marino." />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="https://js.stripe.com/v3/"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <!-- Top banner -->
+  <div class="top-banner">
+    Complimentary consultation – start your wellness journey today.
+    <a href="#consult">Book now</a>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo-wrap">
+        <img src="images/heal-logo.png" alt="HEAL Wellness logo" class="logo-img" />
+        <span class="logo-text">HEAL Wellness</span>
+      </a>
+      <nav class="nav">
+        <a href="#how">How it works</a>
+        <a href="#treatments">Treatments</a>
+        <a href="#membership">Memberships</a>
+        <a href="#team">Our team</a>
+        <a href="#faq">FAQ</a>
+        <a href="questionnaire.html" class="nav-cta">Patient Questionnaire</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Concierge peptide & hormone care</p>
+        <h1>Medical-grade wellness, delivered to your door.</h1>
+        <p class="hero-sub">
+          HEAL Wellness combines prescription peptides, GLP-1 weight loss, hormone optimization, 
+          and advanced topical creams into one seamless concierge membership – without IV drips or in-home visits.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-plan="core" onclick="startCheckout('core')">
+            Start Your Membership
+          </button>
+          <a href="questionnaire.html" class="btn btn-outline">Take the Wellness Questionnaire</a>
+        </div>
+        <p class="small-print">
+          Led by <strong>Gunjan Raina, MD</strong> and <strong>Jude Marino, Certified Peptide Integration Specialist</strong>.
+        </p>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-card">
+          <h2>What we treat</h2>
+          <ul>
+            <li>Medical weight loss (GLP-1 & adjuncts)</li>
+            <li>Peptide protocols for recovery & longevity</li>
+            <li>Hormone optimization</li>
+            <li>Estriol-based & peptide topical skincare</li>
+            <li>Energy, focus & metabolic support (NAD+ and more)</li>
+          </ul>
+          <p class="hero-note">
+            All care is virtual. Medications ship directly to your home from our partner pharmacy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="section">
+    <div class="container">
+      <h2 class="section-title">How HEAL works</h2>
+      <p class="section-intro">
+        Simple, concierge-level care designed around your schedule.
+      </p>
+      <div class="grid three">
+        <div class="card step-card">
+          <span class="step-badge">1</span>
+          <h3>Tell us your goals</h3>
+          <p>Complete our secure online questionnaire in 10–15 minutes so our team can understand your goals, medical history, and medications.</p>
+        </div>
+        <div class="card step-card">
+          <span class="step-badge">2</span>
+          <h3>Meet your HEAL provider</h3>
+          <p>Connect virtually with Dr. Raina or a HEAL clinician to review labs, refine your plan, and choose the right protocols and products.</p>
+        </div>
+        <div class="card step-card">
+          <span class="step-badge">3</span>
+          <h3>Receive ongoing concierge support</h3>
+          <p>Medications are shipped to your door. Your membership includes ongoing messaging, follow-ups, and protocol adjustments as you progress.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatments / Products -->
+  <section id="treatments" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Treatments & products</h2>
+      <p class="section-intro">
+        Modeled after leading concierge practices, HEAL offers the same advanced therapies –
+        focused specifically on peptides, hormones, GLP-1 weight loss, and topical skincare.
+      </p>
+      <div class="grid three">
+        <div class="card">
+          <h3>GLP-1 Medical Weight Loss</h3>
+          <p>Personalized GLP-1 and adjunct protocols to support sustainable weight loss, improved metabolic health, and appetite control.</p>
+          <ul class="bullet-list">
+            <li>Virtual consults & follow-ups</li>
+            <li>Medication shipped to you</li>
+            <li>Behavior & nutrition coaching built-in</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Peptide Therapy</h3>
+          <p>Evidence-informed peptide protocols tailored to recovery, inflammation, gut health, performance, and longevity.</p>
+          <ul class="bullet-list">
+            <li>BPC-157, TB-500, GHK-Cu, Wolverine, Glow & more</li>
+            <li>Stacked protocols designed by our peptide team</li>
+            <li>Ongoing adjustments based on your response</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Hormone Optimization</h3>
+          <p>Comprehensive labs and optimization plans for testosterone, thyroid, and other key hormones affecting energy, mood, and body composition.</p>
+          <ul class="bullet-list">
+            <li>Advanced lab panel review</li>
+            <li>Precision dosing & monitoring</li>
+            <li>Telehealth follow-ups included with your membership</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Topical Skincare & Estriol Creams</h3>
+          <p>Physician-developed estriol-based and peptide-infused creams designed to support smoother, brighter, more resilient skin.</p>
+          <ul class="bullet-list">
+            <li>Customized regimens for face, neck & hands</li>
+            <li>Silky, elegant feel with medical-grade ingredients</li>
+            <li>Ships nationwide where permitted</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>NAD+ & Cellular Support</h3>
+          <p>NAD+ and adjunct therapies to support mitochondrial function, focus, clarity, and healthy aging.</p>
+          <ul class="bullet-list">
+            <li>Gradual titration to your optimal dose</li>
+            <li>Protocols aligned with your goals</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Primary & Preventive Care (Virtual)</h3>
+          <p>Membership includes access to a clinician who understands your history, labs, and wellness plan – with fast virtual support when you need it.</p>
+          <ul class="bullet-list">
+            <li>Messaging & secure telehealth</li>
+            <li>Referrals and lab coordination</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership plans -->
+  <section id="membership" class="section">
+    <div class="container">
+      <h2 class="section-title">Membership options</h2>
+      <p class="section-intro">
+        Modeled after national concierge programs with simple monthly memberships. 
+        Choose the level of access that fits your lifestyle. (Medication costs may vary based on protocol.)
+      </p>
+      <div class="grid three membership-grid">
+        <!-- Core -->
+        <article class="card membership-card">
+          <div class="badge">Most popular</div>
+          <h3>Core Concierge</h3>
+          <p class="price">$499<span>/month</span></p>
+          <p class="subtext">Great for patients starting their wellness journey.</p>
+          <ul class="checklist">
+            <li>Initial comprehensive consultation</li>
+            <li>Baseline & follow-up labs (where available)</li>
+            <li>Access to GLP-1, peptide & topical protocols*</li>
+            <li>Secure messaging with HEAL team</li>
+            <li>Quarterly telehealth check-ins</li>
+          </ul>
+          <button class="btn btn-primary full" onclick="startCheckout('core')">
+            Start Core Membership
+          </button>
+          <p class="small-print">*Medication billed separately via partner pharmacy.</p>
+        </article>
+
+        <!-- Optimize -->
+        <article class="card membership-card">
+          <h3>Optimize Concierge</h3>
+          <p class="price">$799<span>/month</span></p>
+          <p class="subtext">For patients who want tighter monitoring and multi-modal protocols.</p>
+          <ul class="checklist">
+            <li>Everything in Core</li>
+            <li>More frequent follow-up visits</li>
+            <li>Multi-peptide stacks & protocol layering</li>
+            <li>Expanded lab panels & optimization reviews</li>
+            <li>Priority scheduling</li>
+          </ul>
+          <button class="btn btn-primary-ghost full" onclick="startCheckout('optimize')">
+            Start Optimize Membership
+          </button>
+        </article>
+
+        <!-- Elite -->
+        <article class="card membership-card">
+          <h3>Elite Concierge</h3>
+          <p class="price">$1,199<span>/month</span></p>
+          <p class="subtext">High-touch concierge care for busy executives and performers.</p>
+          <ul class="checklist">
+            <li>Everything in Optimize</li>
+            <li>Monthly telehealth consults</li>
+            <li>Advanced longevity & performance testing</li>
+            <li>Customized peptide & hormone roadmaps</li>
+            <li>White-glove coordination for labs & imaging</li>
+          </ul>
+          <button class="btn btn-primary-ghost full" onclick="startCheckout('elite')">
+            Start Elite Membership
+          </button>
+        </article>
+      </div>
+
+      <p class="membership-note">
+        <strong>No IV infusions or in-home services:</strong> HEAL focuses on virtual concierge care, prescriptions, and at-home therapies only.
+      </p>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Meet the HEAL team</h2>
+      <div class="grid two team-grid">
+        <div class="card">
+          <h3>Gunjan Raina, MD</h3>
+          <p>
+            Dr. Raina is a board-certified physician with a passion for precision wellness, 
+            hormone optimization, and peptide-based therapies. She combines evidence-based medicine with 
+            a whole-person approach to help patients look, feel, and perform at their best.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Jude Marino<br/><span class="title-small">Certified Peptide Integration Specialist</span></h3>
+          <p>
+            Jude oversees protocol design and integration at HEAL, working closely with Dr. Raina 
+            to craft practical, sustainable plans. His focus is on real-world results, concierge-level 
+            service, and a seamless experience from intake to refill.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consult CTA -->
+  <section id="consult" class="section consult-section">
+    <div class="container consult-inner">
+      <div>
+        <h2>Not sure where to start?</h2>
+        <p>
+          Schedule a complimentary consultation to review your goals and see if HEAL is right for you.
+        </p>
+      </div>
+      <a href="https://calendly.com/" target="_blank" class="btn btn-light">
+        Schedule Complimentary Consult
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <h2 class="section-title">Frequently asked questions</h2>
+      <div class="faq">
+        <details>
+          <summary>What is included in a HEAL membership?</summary>
+          <p>
+            All memberships include access to a HEAL clinician, secure messaging, telehealth visits,
+            and medical oversight of your personalized protocols. Labs and medications are ordered
+            through partner labs and pharmacies and may be billed separately depending on your plan.
+          </p>
+        </details>
+        <details>
+          <summary>Do you offer IV therapy or in-home visits?</summary>
+          <p>
+            No. HEAL is focused on virtual concierge care, prescriptions, and at-home therapies 
+            including peptides, GLP-1 medications, hormone optimization, and topical creams.
+          </p>
+        </details>
+        <details>
+          <summary>Do you take insurance?</summary>
+          <p>
+            We are a membership-based practice and do not bill insurance directly. 
+            Upon request, we can provide documentation you can submit to your insurer, HSA, or FSA.
+          </p>
+        </details>
+        <details>
+          <summary>Where are you available?</summary>
+          <p>
+            Availability depends on state-specific regulations. Start by completing the questionnaire, 
+            and we’ll let you know if HEAL can treat you in your state or add you to our waitlist.
+          </p>
+        </details>
+        <details>
+          <summary>Is my information secure?</summary>
+          <p>
+            We use secure, encrypted platforms for telehealth, messaging, and record storage. 
+            HEAL follows HIPAA guidelines for protecting your health information.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">
+          <img src="images/heal-logo.png" alt="HEAL Wellness" class="logo-img-small" />
+          <span>HEAL Wellness</span>
+        </div>
+        <p class="footer-text">
+          It’s not just a brand, it’s a lifestyle.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="questionnaire.html">Patient Questionnaire</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="mailto:jude@lmgmedicine.com">Contact</a>
+      </div>
+      <div class="footer-meta">
+        &copy; <span id="year"></span> HEAL Wellness. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
